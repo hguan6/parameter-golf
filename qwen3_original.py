@@ -14,7 +14,7 @@ import math
 import os
 import shutil
 from pathlib import Path
-from time import time
+import time
 from typing import Iterator
 
 import numpy as np
@@ -352,7 +352,7 @@ def main() -> None:
     )
     log(f"validation_stream:bos_token_id:{tokenizer.bos_token_id} doc_boundaries:preserved")
 
-    t0 = time.performance_counter()
+    t0 = time.perf_counter()
     val_loss, val_bpb, docs_seen, tokens_seen, byte_count = evaluate_model(
         model=model,
         tokenizer=tokenizer,
@@ -365,7 +365,7 @@ def main() -> None:
         seq_len=args.seq_len,
         eval_batch_seqs=args.eval_batch_seqs,
     )
-    t1 = time.performance_counter()
+    t1 = time.perf_counter()
     elapsed = t1 - t0
 
     log(
