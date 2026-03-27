@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export OMP_NUM_THREADS=1
+unset NCCL_ASYNC_ERROR_HANDLING
+export TORCH_NCCL_ASYNC_ERROR_HANDLING=1
+
 RUN_ID=qwen3_tiny \
 QWEN_MODEL_ID=Qwen/Qwen3-1.7B-Base \
 MATRIX_LR=0.04 \

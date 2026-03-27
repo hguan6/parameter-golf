@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "accelerate>=1.13.0",
     "datasets>=4.8.4",
+    "flash-linear-attention==0.3.0",
     "huggingface-hub>=1.8.0",
     "kernels>=0.12.3",
     "numpy>=2.4.3",
